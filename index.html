@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>amanda grace wall UX</title>
+    <!--jQuery-->
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <!--D3-->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="stylesheets/index.css"/>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,300' rel='stylesheet' type='text/css'>
+    <!--Favicon-->
+    <link rel="icon" href="assets/logo.png">
+  </head>
+  <body>
+    <header>
+        <img id="logo" style="float: left" src="assets/logo.png"/>
+        <h1 onclick="toGraph()" style="float: left" class="smooth">amanda grace wall</h1>
+        <!--Desktop Menu-->
+        <ul id="desktop-menu" style="float: right" class="smooth">
+            <a class="workLink selected" onclick="toGraph()"><h2 style="float: left">my work</h2></a>
+          <a class="aboutLink" onclick="toContent('about')"><h2 style="float: left">about me</h2></a>
+          <a class="contactLink" onclick="toContent('contact')"><h2 style="float: left">reach out</h2></a>
+        </ul>
+        <!--Mobile Menu Icon-->
+        <div id="hamburger" class="action-icon" style="float: right" onclick="showMenu()">
+          <h2 class="smooth">&#9776;</h2>
+        </div>
+    </header>
+    <!--Filters-->
+    <div id="filters" class="smooth">
+      <h2>i design&nbsp;</h2>
+      <a id="all" onclick="filter(this)" class="selected filter"><h2>experiences</h2></a><h2>&nbsp;</h2><h2 class="bumped">(&nbsp;</h2>
+      <a id="digital" onclick="filter(this)" class="filter"><h3>digital</h3></a><h3>&nbsp;/&nbsp;</h3>
+      <a id="spatial" onclick="filter(this)" class="filter"><h3>spatial</h3></a><h3>&nbsp;/&nbsp;</h3>
+      <a id="graphic" onclick="filter(this)" class="filter"><h3>graphic</h3></a><h3>&nbsp;/&nbsp;</h3>
+      <a id="brand" onclick="filter(this)" class="filter"><h3>brand</h3></a>
+      <h2>&nbsp;)</h2>
+    </div>
+
+    <!--Graph-->
+    <div id="graph">
+      <script src="scripts/index.js"></script>
+    </div>
+
+    <!--Other Content-->
+    <div id="content" class="container" style="display:none; clear: both;">
+      <div id="about" style="display:none">
+        <div class="row">
+          <div class="col-xs-4 col-sm-3">
+            <div class="text-center"><img class="bubble profile-bubble" src="assets/me/profile.jpg"/></div>
+          </div>
+          <div class="col-xs-8 col-sm-9 smooth">
+            <h1 class="small-margin">sydney-based <span>ui.ux designer</span>
+            <h2 class="small-margin">b.s. computational media, georgia tech</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3 hidden-xs">
+            <div class="row small-margin">
+              <div class="col-sm-9 text-center">
+                <div><img class="bubble large-bubble" src="assets/me/japan.jpg"/></div>
+              </div>
+            </div>
+            <div class="row small-margin">
+              <div class="col-sm-9 col-sm-offset-3 text-center">
+                <div><img class="bubble medium-bubble" src="assets/me/burrito.jpg"/></div>
+              </div>
+            </div>
+            <div class="row small-margin">
+              <div class="col-sm-7 text-right">
+                <div><img class="bubble medium-bubble" src="assets/me/scream.jpg"/></div>
+              </div>
+            </div>
+            <div class="row small-margin">
+              <div class="col-sm-8 col-sm-offset-4 text-center">
+                <div><img class="bubble small-bubble" src="assets/me/backpack.jpg"/></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-9 smooth">
+            <p><span>I was that kid who always asked how and why.</span>
+               Some of us grow out of this incessant questioning. The rest of us become designers.
+               As a user experience designer, <span>I ask the right questions</span> to untangle
+               the ideas and messages in my clients' heads and turn them into <span>simple, effective
+               experiences</span> for their users.
+               <br><br>
+               Experiences are everywhere, and I love finding them.
+               It's why <span>I love to travel, interact with all sorts of media, and try new things.</span>
+               I learn from the successes and failures of designers before me</span> to improve the experiences I create.
+               <br><br>
+               And thanks to my interdisciplinary degree from Georgia Tech, <span>I
+               understand the technologies I design for.</span> I have a strong foundation in
+               visual, interactive, and information design theory, as well as
+               extensive programming coursework. <span>I can prototype and develop what I design.</span></p>
+          </div>
+        </div>
+      </div>
+      <div id="contact" style="display:none" class="smooth">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+          <h1 class="small-margin">say <span>hello!</span></h1>
+          <p>With the recent move to Sydney, I am currently between employment. If you think I might be a good fit for your team or project, reach out! </p>
+          <div class="row">
+            <div class="col-xs-2 col-sm-1 text-center"><img class="icon" src="assets/icons/mail.png"/></div>
+            <div class="col-xs-10 col-sm-11">
+              <a href="mailto:yourstruly@amandagracewall.com">
+                <h2 class="small-margin">yourstruly@amandagracewall.com </h2>
+              </a>
+            </div>
+          </div>
+          <div class="row small-margin">
+            <div class="col-xs-2 col-sm-1 text-center"><img class="icon" src="assets/icons/resume.png"/></div>
+            <div class="col-xs-10 col-sm-11">
+              <a href="assets/files/amandagracerésumé.pdf">
+                <h2 class="small-margin">download my r&eacute;sum&eacute;</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-6 col-xs-12">
+            <form id="contact-form" class="form-horizontal large-margin" method="post" action="assets/index.php">
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="your name">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="your email">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <textarea class="form-control" rows="8" id="message" name="message" placeholder="your message"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <input name="submit" type="submit" value="send message" class="btn btn-block">
+                </div>
+              </div>
+            </form>
+            <div id="form-messages"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--OVERLAID CONTENT-->
+    <!--Mobile Disclaimer-->
+    <div id="mobile-disclaimer">
+      <div id="disclaimer-modal">
+        <h2>hey there!</h2>
+        <br>
+        <p>I noticed you're visiting from a phone.<br><br>No worries – the site is responsive – but for a better experience, check it out on a larger screen.</p>
+        <br>
+        <button class="btn btn-block smooth" onclick="closeDisclaimer()">thanks!</button>
+      </div>
+    </div>
+    <!--Mobile Menu-->
+    <div id="mobile-menu" class="smooth">
+        <a class="workLink selected" onclick="toGraph()"><h2>my work</h2></a>
+        <a class="aboutLink" onclick="toContent('about')"><h2>about me</h2></a>
+        <a class="contactLink" onclick="toContent('contact')"><h2>reach out</h2></a>
+      <div id="closeout" class="action-icon" onclick="hideMenu()"><h2>&#10005;</h2></div>
+    </div>
+    <!--Work Overlay-->
+    <div id="work-overlay">
+      <div id="work-modal">
+      </div>
+    </div>
+  </body>
+</html>
