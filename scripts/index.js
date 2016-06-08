@@ -191,25 +191,22 @@ d3.json("data.json", function(error, graph) {
     dot.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
   });
-  /*work overlay functions*/
+  /*transition to case study*/
   var cases = svg.selectAll(".case")
   .on("click", function(d) {
-    showWork(d.name);
+    showWork(d.url);
   });
 });
 
-/*show work helper function*/
-function showWork(key) {
-  console.log(key);
+/*transition to case study*/
+function showWork(url) {
+  window.location = url;
 }
 
 /*creating drift effect*/
-if (width > 480) {
 setTimeout(function() { //delay after initial tick
-  setInterval(function(){force.alpha(drift);},updateInterval);
+  d3.timer(function(){force.alpha(drift);},updateInterval);
 }, 2000);
-}
-
 
 /*function to move object to front*/
 d3.selection.prototype.moveToFront = function() {
@@ -242,7 +239,7 @@ function filter(key) {
 /*Advises user to check website out on larger screen*/
 $(document).ready(function() {
   if ($(window).width() <= 480 || $(window).height() <= 480) {
-    $("#mobile-disclaimer").fadeIn(1000);
+    $("#mobile-disclaimer").fadeIn(500);
   }
 });
 
@@ -280,10 +277,10 @@ var currentContent = "work";
 function toGraph() {
   if (!graphDisplayed) {
     changeSelectedLink("work");
-    $("#content").fadeOut(1000, function() {
+    $("#content").fadeOut(500, function() {
       $("#" + currentContent).hide();
       currentContent = "work";
-      $("#graph").fadeIn(1000);
+      $("#graph").fadeIn(500);
     });
     graphDisplayed = true;
     $(".filter").removeClass("disabled");
@@ -297,6 +294,7 @@ function toContent(key) {
       transitionFromGraph(key);
     } else {
       transitionContent(key);
+      $("html, body").animate({ scrollTop: 0 }, "slow");
     }
   }
   currentContent = key;
@@ -309,9 +307,9 @@ function changeSelectedLink(key) {
 
 function transitionFromGraph(key) {
   //fade graph out, then fade in content and reset node opacity
-  $("#graph").fadeOut(1000, function() {
+  $("#graph").fadeOut(500, function() {
     $("#" + key).show();
-    $("#content").fadeIn(1000);
+    $("#content").fadeIn(500);
     $(".node").css("opacity", 1);
   });
   //reset and disable filters
@@ -324,8 +322,8 @@ function transitionFromGraph(key) {
 }
 
 function transitionContent(key) {
-  $("#" + currentContent).fadeOut(1000, function() {
-    $("#" + key).fadeIn(1000);
+  $("#" + currentContent).fadeOut(500, function() {
+    $("#" + key).fadeIn(500);
   });
 }
 
@@ -387,3 +385,14 @@ $("#email").focus(function() {$("#email").removeClass('errorField');});
 $("#message").focus(function() {$("#message").removeClass('errorField');});
 
 });
+
+$(function() {
+  var content = $('#main').smoothState({
+    onStart : {
+      duration: 250,
+      render: function() {
+        content.toggleAnimationClass("is-exiting")
+      }
+    }
+  })
+}).data('smoothState');

@@ -13,11 +13,11 @@
     {"id": 10, "name": "development", "group": 2, "value": 1.2, "class": "digital"},
     {"id": 11, "name": "market research", "group": 5, "value": 1.2, "class": "brand"},
     {"id": 12, "name": "wayfinding", "group": 3, "value": 1.2, "class": "spatial"},
-    {"id": 13, "name": "bond intelligent care", "group": 11, "value": 3, "class": "digital graphic case"},
-    {"id": 14, "name": "coca cola enterprises", "group": 12, "value": 3, "class": "digital spatial case"},
-    {"id": 15, "name": "indiecade", "group": 10, "value": 3, "class": "graphic case"},
-    {"id": 16, "name": "activity buzz", "group": 13, "value": 3, "class": "graphic brand case"},
-    {"id": 17, "name": "colorful history", "group": 14, "value": 3, "class": "digital case"}
+    {"id": 13, "name": "bond intelligent care", "group": 11, "value": 3, "class": "digital graphic case", "url":"cases/bond.html"},
+    {"id": 14, "name": "coca cola enterprises", "group": 12, "value": 3, "class": "digital spatial case", "url":"cases/cce.html"},
+    {"id": 15, "name": "indiecade", "group": 10, "value": 3, "class": "graphic case", "url":"cases/indiecade.html"},
+    {"id": 16, "name": "activity buzz", "group": 13, "value": 3, "class": "graphic brand case", "url":"cases/buzz.html"},
+    {"id": 17, "name": "colorful history", "group": 14, "value": 3, "class": "digital case", "url":"cases/colorful.html"}
   ],
   "links":[
     {"source":0,"target":1,"value":1},

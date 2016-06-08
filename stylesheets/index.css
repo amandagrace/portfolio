@@ -3,9 +3,9 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: url(../assets/pattern.png), #444349;
   cursor: url("../assets/cursors/cursor.png") 9 8, auto;
   font-family: "Source Sans Pro";
+  background: url(../assets/pattern.png), #444349;
   color: #444349;
 }
 
@@ -32,10 +32,10 @@ a {
   cursor: url("../assets/cursors/pointer.png") 9 8,pointer;
   text-decoration: none !important;
 }
-a:hover h2, a:hover h3 {
+a:hover h2, a:hover h3, a:hover{
   color: #F88A6B;
 }
-a h2, a h3 {
+a h2, a h3, a {
   transition: all .5s;
   border-bottom: 1px solid rgba(255,255,255,.3);
 }
@@ -50,7 +50,7 @@ a.selected h2, a.selected h3 {
   -moz-osx-font-smoothing: grayscale;
 }
 .shadowed {
-  text-shadow: 2px 2px 3px #444349;
+  text-shadow: 1px 1px 0 #444349;
 }
 .small-margin {
   margin-top: 10px;
@@ -63,7 +63,12 @@ a.selected h2, a.selected h3 {
 .small-indent {
   margin-left: 30px;
 }
-
+span {
+  color: #F88A6B;
+}
+h2 span, h3 span, p span {
+  font-weight: 600;
+}
 /*buttons*/
 .btn{
   color: white;
@@ -99,7 +104,7 @@ header {
   margin-left: 60px;
   height: 30px;
 }
-#filters h2, h3 {
+#filters h2, #filters h3 {
   margin: 0;
   float: left;
 }
@@ -127,7 +132,7 @@ header {
 
 #mobile-menu {
   margin: 0;
-  padding: 20px 40px 20px 20px;
+  padding: 20px 50px 20px 20px;
   position: absolute;
   right: -200px;
   top: 0;
@@ -207,28 +212,6 @@ header {
   stroke-width: 2px;
 }
 
-/*Work Overlay*/
-/*disclaimer*/
-#work-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,.2);
-  display: none;
-}
-#work-modal {
-  position: absolute;
-  top: 120px;
-  left: 5%;
-  right: 5%;
-  bottom: 5%;
-  background: rgba(255,255,255,.8);
-  border-radius: 20px;
-}
-
-
 /*other content*/
 #content {
   margin-top: 10px;
@@ -237,9 +220,6 @@ header {
   color: white;
 }
 
-#content span {
-  color: #F88A6B;
-}
 
 /*about bubbles*/
 .bubble {
@@ -311,4 +291,70 @@ header {
     margin-left: 60px;
     height: 50px;
   }
+}
+
+/*case template*/
+.case-header {
+  width: 100%;
+  color: white;
+  border-top: rgba(255,255,255,.3) solid 1px;
+}
+
+.case-header.cce {
+  background: linear-gradient(to top, rgba(0,0,0,.3), rgba(0,0,0,.5)),
+   url("../cases/assets/cce/splash.jpg");
+}
+.back {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 12px;
+}
+.case-question {
+  margin-bottom: 40px;
+}
+a.action-icon h2 {
+  border-bottom: none;
+}
+a.action-icon {
+  border-bottom: none;
+}
+.case-content {
+  background: #dedede;
+  padding: 20px 0 50px 0;
+  min-height: calc(100% - 160px);
+}
+.case-content span {
+  color: #f97658;
+}
+
+.feed-text {
+  float: left;
+  clear: left;
+}
+
+.case-content a {
+  color: #444349;
+  cursor: url("../assets/cursors/pointer.png") 9 8, auto;
+  border-bottom: 1px solid rgba(0,0,0,.3);
+}
+
+.case-content a:hover {
+  color: #f88a6b;
+}
+.feed-image {
+  float: right;
+  clear: right;
+  margin: 10px 0;
+}
+.feed-image label {
+  margin: 10px 0;
+}
+
+.emphasis {
+  margin: 20px 0;
+}
+
+hr {
+  border-top: 2px solid #f97658;
 }

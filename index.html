@@ -6,6 +6,8 @@
     <title>amanda grace wall UX</title>
     <!--jQuery-->
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <!--SmoothState-->
+    <script src="scripts/jquery.smoothState.js"></script>
     <!--D3-->
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <!--Bootstrap-->
@@ -17,7 +19,7 @@
     <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,300' rel='stylesheet' type='text/css'>
     <!--Favicon-->
-    <link rel="icon" href="assets/logo.png">
+    <link rel="icon" href="assets/favicon.png">
   </head>
   <body>
     <header>
@@ -35,7 +37,7 @@
         </div>
     </header>
     <!--Filters-->
-    <div id="filters" class="smooth">
+    <div id="filters" style="clear:both" class="smooth">
       <h2>i design&nbsp;</h2>
       <a id="all" onclick="filter(this)" class="selected filter"><h2>experiences</h2></a><h2>&nbsp;</h2><h2 class="bumped">(&nbsp;</h2>
       <a id="digital" onclick="filter(this)" class="filter"><h3>digital</h3></a><h3>&nbsp;/&nbsp;</h3>
@@ -94,12 +96,14 @@
                <br><br>
                Experiences are everywhere, and I love finding them.
                It's why <span>I love to travel, interact with all sorts of media, and try new things.</span>
-               I learn from the successes and failures of designers before me</span> to improve the experiences I create.
+               I learn from the successes and failures of the experiences around me – even the failures of some of my own designs – to improve my work.
                <br><br>
                And thanks to my interdisciplinary degree from Georgia Tech, <span>I
                understand the technologies I design for.</span> I have a strong foundation in
                visual, interactive, and information design theory, as well as
-               extensive programming coursework. <span>I can prototype and develop what I design.</span></p>
+               extensive programming coursework. <span>I can prototype and develop what I design.</span>
+               <br><br>
+               If you'd like to get to know me better, <span>I'd love to chat.</span> Feel free to <a class="aboutLink" onclick="toContent('contact')">reach out</a>!
           </div>
         </div>
       </div>
